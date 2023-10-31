@@ -1,0 +1,46 @@
+function selectionSort(array) {
+  // Only change code below this line
+
+  
+
+  for(let i = 0;i<array.length;i++){
+
+    // Creats min value varibles and equates it to infinity
+    let min = array[i];
+    let minIndex;
+
+
+    for(let j=i+1;j<array.length;j++){
+
+      if(min>array[j]){
+
+        min = array[j];
+        minIndex = j;
+
+
+      }
+
+      
+      
+
+    }
+
+  
+
+   
+      let temp = array[i];
+      array[i] = min;
+      array[minIndex] = temp;
+
+      
+
+  }
+
+
+ 
+
+  return array;
+  // Only change code above this line
+}
+
+selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])
