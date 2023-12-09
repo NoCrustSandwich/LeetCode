@@ -1,0 +1,58 @@
+function mergeSort(array) {
+  // Only change code below this line
+
+  if (array.length === 1){
+      return array
+    }
+    else{
+
+    
+      let mid_index = Math.floor(array.length / 2);
+      let arr_1 = mergeSort(array.slice(0, mid_index));
+      let arr_2 = mergeSort(array.slice(mid_index));
+
+      return mergeArrays(arr_1, arr_2)
+
+    }
+  // Only change code above this line
+}
+
+
+function mergeArrays(arr_1, arr_2){
+
+    let final_arr = [];
+
+
+    while(arr_1.length > 0 && arr_2.length > 0){
+
+      if( arr_1[0] > arr_2[0] ){
+
+        final_arr.push(arr_2[0]);
+        arr_2.splice(0, 1);
+
+      }
+      else{
+
+        final_arr.push(arr_1[0]);
+        arr_1.splice(0, 1);
+
+      }
+    }
+
+    while(arr_1.length > 0){
+
+      final_arr.push(arr_1[0]);
+      arr_1.splice(0, 1);
+    }
+
+
+    while(arr_2.length > 0){
+
+      final_arr.push(arr_2[0]);
+      arr_2.splice(0, 1);
+
+    }
+
+  return final_arr;
+
+}
