@@ -1,0 +1,12 @@
+class Solution:
+    def percentageLetter(self, s: str, letter: str) -> int:
+
+        str_length = len(s)
+        counter = 0
+
+        for char in s:
+            if char == letter:
+                counter += 1
+
+        return int((counter/str_length)*100)
+        
